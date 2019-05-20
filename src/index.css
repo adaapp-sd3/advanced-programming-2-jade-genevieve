@@ -15,6 +15,7 @@ code {
 
 body {
   overflow-y: hidden;
+  background-color: darkgreen;
 }
 
 canvas {
@@ -28,4 +29,21 @@ canvas {
   top: 0;
   left: 0;
   width: calc(100% - 700px);
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.dashboard-stats {
+  text-align: center;
+  background-color: rgb(72, 228, 150);
+  padding: 2px;
+}
+
+dd {
+  margin-inline-start: 0px;
+  font-weight: bold;
 }

@@ -8,6 +8,8 @@ class Farmer extends Drawable {
   budget: number = 1000
   showUI: boolean = true
   currentLocation: any
+  year: number = 2020
+  temp: number = 0.0;
   imgUrl = "/img/farmer.png"
   constructor() {
     super()
@@ -15,6 +17,10 @@ class Farmer extends Drawable {
     this.y = 100
     this.width = 72
     this.height = 72
+    setInterval(() => {if (this.year < 2050)
+      this.year = this.year + 1;}, 2000)
+    setInterval(() => {if (this.temp < 1.5)
+      this.temp = (this.temp + 0.1);}, 2000)
   }
 
   public preload() {
@@ -29,16 +35,16 @@ class Farmer extends Drawable {
 
   private update() {
     if (this.p5.keyIsDown(this.p5.RIGHT_ARROW)) {
-      this.x = this.x + 3
+      this.x = this.x + 5
     }
     if (this.p5.keyIsDown(this.p5.LEFT_ARROW)) {
-      this.x = this.x - 3
+      this.x = this.x - 5
     }
     if (this.p5.keyIsDown(this.p5.DOWN_ARROW)) {
-      this.y = this.y + 3
+      this.y = this.y + 5
     }
     if (this.p5.keyIsDown(this.p5.UP_ARROW)) {
-      this.y = this.y - 3
+      this.y = this.y - 5
     }
   }
 
