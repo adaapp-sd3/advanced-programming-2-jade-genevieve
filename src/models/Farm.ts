@@ -6,50 +6,64 @@ class Farm extends Drawable {
   width: number = 700
   height: number = 710
   cows: any
-  sheep: any
+  pigs: any
   chickens: any
-  straw: any
-  milk: any
-  seeds: any
+  trees: any
+  sunflowers: any
+  beans: any
+  feed: any
+  water: any
   constructor(
     cows: any = {
       name: "Cows",
-      total: 65,
+      total: 42,
       objects: []
     },
-    sheep: any = {
-      name: "Sheep",
+    pigs: any = {
+      name: "Pigs",
       total: 42,
       objects: []
     },
     chickens: any = {
       name: "Chickens",
-      total: 42,
+      total: 142,
       objects: []
     },
-    straw: any = {
-      name: "Straw",
+    trees: any = {
+      name: "Trees",
+      total: 3,
+      objects: []
+    },
+    sunflowers: any = {
+      name: "Sunflowers",
+      total: 1,
+      objects: []
+    },
+    beans: any = {
+      name: "Beans",
+      total: 2,
+      objects: []
+    },
+    feed: any = {
+      name: "Feed",
       total: 1000,
-      unit: "bails"
+      unit: "KG"
     },
-    milk: any = {
-      name: "Milk",
-      total: 0,
-      unit: "pints"
-    },
-    seeds: any = {
-      name: "Grass seeds",
-      total: 0,
-      unit: "bunches"
+    water: any = {
+      name: "Water",
+      total: 900,
+      unit: "ML"
     }
   ) {
     super()
     this.cows = cows
-    this.sheep = sheep
+    this.pigs = pigs
     this.chickens = chickens
-    this.straw = straw
-    this.milk = milk
-    this.seeds = seeds
+    this.trees = trees
+    this.sunflowers = sunflowers
+    this.beans = beans
+    this.feed = feed
+    this.water = water
   }
 
   public preload() {

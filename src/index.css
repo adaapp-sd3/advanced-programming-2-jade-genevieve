@@ -15,11 +15,10 @@ code {
 
 body {
   overflow-y: hidden;
-  background-color: darkgreen;
 }
 
 canvas {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
 }
@@ -31,19 +30,16 @@ canvas {
   width: calc(100% - 700px);
 }
 
-.dashboard {
+.container {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-
-.dashboard-stats {
-  text-align: center;
-  background-color: rgb(72, 228, 150);
-  padding: 2px;
+.grid {
+	display: grid;
+	grid-template-columns:
+		[xl-start] 1fr [md-start] minmax(0, 700px) [md-end] 1fr [xl-end];
 }
 
-dd {
-  margin-inline-start: 0px;
-  font-weight: bold;
-}
+.grid *  { grid-column: md; }
+.grid-xl { grid-column: xl; }

@@ -2,11 +2,11 @@ import React, { Component } from "react"
 
 class FieldDashboard extends Component {
 
-  milkCows = () => {
-    for (var i=0; i<this.props.field.contents.length; i++) {
-      this.props.field.contents[i].yieldMilk()
-    }
-  }
+  // milkCows = () => {
+  //   for (var i=0; i<this.props.field.contents.length; i++) {
+  //     this.props.field.contents[i].yieldMilk()
+  //   }
+  // }
 
   render() {
     return (
@@ -16,11 +16,13 @@ class FieldDashboard extends Component {
           <p>
             In this field you have {this.props.field.contents.length}{" "}
             {this.props.field.contents[0].name}s
+
+             {/* do something here - yieldMilk removed */}
             {this.props.field.contents[0].name === "Cow" && (
-              <button onClick={this.milkCows}>Milk them</button>
+              <button class="button" onClick={this.milkCows}>Milk them</button>
             )}
           </p>
-          
+
         )}
         {this.props.field.contents.map((item, i) => (
           <>

@@ -21,7 +21,7 @@ class MarketDashboard extends Component {
         <dl>
           <dt>Seeds</dt>
           <dd>
-            <button onClick={() => this.buyItem("seeds")}>
+            <button class="button" onClick={() => this.buyItem("seeds")}>
               Buy seeds for {this.props.market.grassSeedPrice}
             </button>
           </dd>
