@@ -10,7 +10,8 @@ class Farmer extends Drawable {
   currentLocation: any
   year: number = 2020
   temp: number = 0.0;
-  imgUrl = "/img/farmer.png"
+  imgUrl = "/img/tractor7.png"
+  sourceX: number = 0;
   constructor() {
     super()
     this.x = 100
@@ -21,7 +22,14 @@ class Farmer extends Drawable {
       this.year = this.year + 1;}, 2000)
     setInterval(() => {if (this.temp < 1.5)
       this.temp = (this.temp + 0.1);}, 2000)
-  }
+    setInterval(() => {
+      if (this.sourceX < this.width*6){
+        this.sourceX = this.sourceX + this.width
+      } else {
+          this.sourceX = 0
+        }
+    }, 200)
+    }
 
   public preload() {
     this.p5Img = this.p5.loadImage(this.imgUrl)
@@ -44,7 +52,7 @@ class Farmer extends Drawable {
       this.y = this.y + 5
     }
     if (this.p5.keyIsDown(this.p5.UP_ARROW)) {
-      this.y = this.y - 5
+      this.y = this.y - 5 
     }
   }
 
@@ -83,7 +91,7 @@ class Farmer extends Drawable {
   public draw() {
     this.update()
     this.getCurrentLocation()
-    var bobAmount = Math.sin(this.p5.millis() / 60) * 3
+    var bobAmount = Math.sin(this.p5.millis() / 60) * 1
     let that = this
     this.updateUI({ farmer: that })
     this.p5.image(
@@ -91,8 +99,13 @@ class Farmer extends Drawable {
       this.x,
       this.y + bobAmount,
       this.width,
+      this.height,
+      this.sourceX,
+      0,
+      this.width,
       this.height
     )
+
   }
 
   set farm(farm: Farm) {
