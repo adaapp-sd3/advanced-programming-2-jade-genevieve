@@ -6,17 +6,26 @@ class Farm extends Drawable {
   width: number = 700
   height: number = 710
   cows: any
+  beef: any
   pigs: any
+  pork: any
   chickens: any
+  eggs: any;
   trees: any
   sunflowers: any
   beans: any
   feed: any
   water: any
+  solarPanel: any
   constructor(
     cows: any = {
       name: "Cows",
       total: 42,
+      objects: []
+    },
+    beef: any = {
+      name: "Beef",
+      total: 0,
       objects: []
     },
     pigs: any = {
@@ -24,9 +33,19 @@ class Farm extends Drawable {
       total: 42,
       objects: []
     },
+    pork: any = {
+      name: "Cows",
+      total: 0,
+      objects: []
+    },
     chickens: any = {
       name: "Chickens",
       total: 142,
+      objects: []
+    },
+    eggs: any = {
+      name: "Chickens",
+      total: 10,
       objects: []
     },
     trees: any = {
@@ -53,17 +72,26 @@ class Farm extends Drawable {
       name: "Water",
       total: 900,
       unit: "ML"
+    },
+    solarPanel: any = {
+      name: "Solar",
+      total: 0,
+      unit: "ML"
     }
   ) {
     super()
     this.cows = cows
+    this.beef = beef
     this.pigs = pigs
+    this.pork = pork
     this.chickens = chickens
+    this.eggs = eggs
     this.trees = trees
     this.sunflowers = sunflowers
     this.beans = beans
     this.feed = feed
     this.water = water
+    this.solarPanel = solarPanel
   }
 
   public preload() {

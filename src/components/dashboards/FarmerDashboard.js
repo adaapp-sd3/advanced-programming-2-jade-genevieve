@@ -12,7 +12,7 @@ class FarmerDashboard extends Component {
     this.hideResources = this.hideResources.bind(this);
   }
 
-  hideResources(event) {
+  hideResources() {
     this.setState({hideResources: this.state.hideResources ? false : true})
   }
 
@@ -71,7 +71,7 @@ class FarmerDashboard extends Component {
                 <div class="media-content">
                   <div class="content">
                     <h1 class="subtitle is-size-7 has-text-grey">Temp</h1>
-                    {this.props.farmer.temp.toFixed(1)}
+                    {this.props.farmer.temp.toFixed(1)}°C
                   </div>
                   <progress class="progress is-danger" value={this.props.farmer.year - 2020} max="30"></progress>
                 </div>
@@ -88,7 +88,7 @@ class FarmerDashboard extends Component {
                 <div class="media-content">
                   <div class="content">
                     <h1 class="subtitle is-size-7 has-text-grey">Cash</h1>
-                    {this.props.farmer.budget}
+                    {this.props.farmer.budget} <span class="is-size-7">Spondulix</span>
                   </div>
                 </div>
               </article>
@@ -104,7 +104,7 @@ class FarmerDashboard extends Component {
                 <div class="media-content">
                   <div class="content">
                     <h1 class="subtitle is-size-7 has-text-grey">GHG's</h1>
-                    {this.props.farmer.budget}
+                    {this.props.farmer.GHG} Gt <span class="is-size-7">CO2e/yr</span>
                   </div>
                 </div>
               </article>

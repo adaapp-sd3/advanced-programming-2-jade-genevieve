@@ -5,11 +5,12 @@ import Market from "./Market"
 class Farmer extends Drawable {
   myFarm!: Farm
   localMarket!: Market
-  budget: number = 1000
+  budget: number = 10000
   showUI: boolean = true
   currentLocation: any
   year: number = 2020
   temp: number = 0.0;
+  GHG: number = 6;
   imgUrl = "/img/tractor7.png"
   sourceX: number = 0;
   constructor() {
@@ -18,10 +19,17 @@ class Farmer extends Drawable {
     this.y = 100
     this.width = 72
     this.height = 72
+
+
+    //Increment year to 2050 over ten minutes = 3yrs/min
     setInterval(() => {if (this.year < 2050)
-      this.year = this.year + 1;}, 2000)
+      this.year = this.year + 1;}, 20000)
+
+    // Increment temp to 1.5 over ten minutes
     setInterval(() => {if (this.temp < 1.5)
-      this.temp = (this.temp + 0.1);}, 2000)
+      this.temp = (this.temp + 0.1);}, 120000)
+
+      //updates the image location on the tractor sprite sheet
     setInterval(() => {
       if (this.sourceX < this.width*6){
         this.sourceX = this.sourceX + this.width
