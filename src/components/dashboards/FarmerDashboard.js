@@ -3,15 +3,27 @@ import React, { Component } from 'react';
 
 class FarmerDashboard extends Component {
 
-  hideUI = () => {
-    this.props.farmer.showUI = false
+  constructor(){
+    super()
+    
+    this.state = {
+    hideResources: false
+    }
+    this.hideResources = this.hideResources.bind(this);
   }
 
+  hideResources(event) {
+    this.setState({hideResources: this.state.hideResources ? false : true})
+  }
+
+
   render() {
+
+    const style = this.state.hideResources ? { display : "none"} : { display : "block"}
+
     return (
 
       <section class="section has-background-light">
-
         <section class="section">
           <div class="container">
             <article class="media">
@@ -32,7 +44,6 @@ class FarmerDashboard extends Component {
 
         <section class="section is-paddingless">
           <div class="columns is-multiline">
-
             <div class="column">
               <article class="media box">
                 <figure class="media-left">
@@ -46,9 +57,7 @@ class FarmerDashboard extends Component {
                     {this.props.farmer.year}
                   </div>
                   <progress class="progress is-warning" value={this.props.farmer.year - 2020} max="30"></progress>
-
                 </div>
-                
               </article>
             </div>
 
@@ -65,7 +74,6 @@ class FarmerDashboard extends Component {
                     {this.props.farmer.temp.toFixed(1)}
                   </div>
                   <progress class="progress is-danger" value={this.props.farmer.year - 2020} max="30"></progress>
-
                 </div>
               </article>
             </div>
@@ -82,8 +90,6 @@ class FarmerDashboard extends Component {
                     <h1 class="subtitle is-size-7 has-text-grey">Cash</h1>
                     {this.props.farmer.budget}
                   </div>
-                  {/* <progress class="progress is-success" value={this.props.farmer.year - 2020} max="30"></progress> */}
-
                 </div>
               </article>
             </div>
@@ -100,8 +106,6 @@ class FarmerDashboard extends Component {
                     <h1 class="subtitle is-size-7 has-text-grey">GHG's</h1>
                     {this.props.farmer.budget}
                   </div>
-                  {/* <progress class="progress is-success" value={this.props.farmer.year - 2020} max="30"></progress> */}
-
                 </div>
               </article>
             </div>
@@ -109,12 +113,11 @@ class FarmerDashboard extends Component {
         </section>
 
 
-        <section class="section">
+        <section class="section" style={style}>
           <div class="columns is-multiline">
             {this.props.farmer.myFarm && (<>
 
               <div class="column">
-
                 <div class="notification">
                   <div class="content">
                     <figure class="image is-32x32">
@@ -126,7 +129,6 @@ class FarmerDashboard extends Component {
               </div>
 
               <div class="column">
-
                 <div class="notification">
                   <div class="content">
                     <figure class="image is-32x32">
@@ -138,7 +140,6 @@ class FarmerDashboard extends Component {
               </div>
 
               <div class="column">
-
                 <div class="notification">
                   <div class="content">
                     <figure class="image is-32x32">
@@ -150,7 +151,6 @@ class FarmerDashboard extends Component {
               </div>
 
               <div class="column">
-
                 <div class="notification">
                   <div class="content">
                     <figure class="image is-32x32 tooltip" tooltip-title="feed">
@@ -162,7 +162,6 @@ class FarmerDashboard extends Component {
               </div>
 
               <div class="column">
-
                 <div class="notification">
                   <div class="content">
                     <figure class="image is-32x32">
@@ -174,7 +173,6 @@ class FarmerDashboard extends Component {
               </div>
 
               <div class="column">
-
                 <div class="notification">
                   <div class="content">
                     <figure class="image is-32x32">
@@ -186,7 +184,6 @@ class FarmerDashboard extends Component {
               </div>
 
               <div class="column">
-
                 <div class="notification">
                   <div class="content">
                     <figure class="image is-32x32 tooltip" tooltip-title="beans">
@@ -198,7 +195,6 @@ class FarmerDashboard extends Component {
               </div>
 
               <div class="column">
-
                 <div class="notification">
                   <div class="content">
                     <figure class="image is-32x32 tooltip" tooltip-title="water">
@@ -208,14 +204,15 @@ class FarmerDashboard extends Component {
                 </div>
                 </div>
               </div>
+
             </>
             )}
           </div>
         </section>
 
-        <div class="section is-paddingless">
-
-          <button class="button is-warning" onClick={this.hideUI}>Hide UI</button>
+        <div class="section">
+          <button class="button is-warning" onClick={this.hideResources}>
+          {this.state.hideResources === false ? "Hide Resources" : "Show Resources" }</button>
         </div>
 
       </section>
