@@ -1,6 +1,5 @@
 import Crop from "../abstract/Crop"
 import Farm from "../Farm";
-import Game from "../Game";
 import Farmer from "../Farmer";
 
 
@@ -12,7 +11,6 @@ class Bean extends Crop {
   thirst: number = 5
   farm: Farm
   farmer!: Farmer
-  game!: Game;
   
   constructor(farm: Farm) {
     super()
@@ -33,7 +31,7 @@ class Bean extends Crop {
 
   drinkWater() {
     if (this.thirst <= 5 && this.thirst !== 0) {
-      if (this.game.temp > 1.0) {
+      if (this.farmer.temp > 1.0) {
         this.thirst = this.thirst - 1
         
       }

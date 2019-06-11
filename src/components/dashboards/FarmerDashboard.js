@@ -1,13 +1,16 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React, { Component } from 'react';
 
+const axios = require('axios');
+
 class FarmerDashboard extends Component {
 
   constructor(){
     super()
     
     this.state = {
-    hideResources: false
+    hideResources: false,
+    carbonIntensity: 100,
     }
     this.hideResources = this.hideResources.bind(this);
   }
@@ -15,6 +18,36 @@ class FarmerDashboard extends Component {
   hideResources() {
     this.setState({hideResources: this.state.hideResources ? false : true})
   }
+ 
+
+  componentDidMount() {
+    const authToken = "461a43437cb43fc4";
+
+    const options = {
+        method: 'GET',
+        url: `https://cors-anywhere.herokuapp.com/https://api.co2signal.com/v1/latest?countryCode=GB`,
+        mode: '',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'auth-token' : authToken
+          },
+    };
+
+    axios(options)
+    .then(response => {
+        
+      this.setState({ carbonIntensity: response.data.data.carbonIntensity });
+      console.log(response.data);
+      
+    })
+    .catch(error => {
+      console.log(error);
+    });
+
+  }
+
+
 
 
   render() {
@@ -104,7 +137,7 @@ class FarmerDashboard extends Component {
                 <div class="media-content">
                   <div class="content">
                     <h1 class="subtitle is-size-7 has-text-grey">GHG's</h1>
-                    {this.props.farmer.GHG} Gt <span class="is-size-7">CO2e/yr</span>
+                    {this.state.carbonIntensity.toFixed(0)} kWh <span class="is-size-7">CO2e/yr</span>
                   </div>
                 </div>
               </article>
