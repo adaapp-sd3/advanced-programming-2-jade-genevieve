@@ -8,3 +8,4 @@
 |    3   |Created sprite sheet from tractor gif at [ezgif.com/gif-to-sprite](https://ezgif.com/gif-to-sprite). Tested different ideas to try and modify the speed including creating a separate function with local variables to count each time `draw` calls it and a modulo conditional to prevent it updating every time but it was less successful than `setInterval`.|  16|
 |    2   |Isolated the resources on the farmer dashboard to use the hide/show button while keeping the game goals visible.|  18|
 |    8   |Rebuilt the Market dashboard with minimal styling and started work on including items to help with game objectives. Implemented ability to buy and sell of items.|  26|
+|    6   |Added [CO2 Signal API](https://docs.co2signal.com/) to get carbon emission data for "GB". Learned alot about CORS but found a workaround using **axios** and [CORS Anywhere](https://cors-anywhere.herokuapp.com) |  32|
