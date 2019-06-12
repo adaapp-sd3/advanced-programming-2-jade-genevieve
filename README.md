@@ -1,7 +1,7 @@
 
 #GROW ZER0
 
-> Despite the UK agreeing to targets to limit gloabal warming to below 1.5°C, CO2 is still being added to the atmosphere faster than it can be removed.
+> Despite the UK agreeing to targets to limit global warming to below 1.5°C, CO2 is still being added to the atmosphere faster than it can be removed.
 > The UK is currently failing to reduce GHG emissions and temperatures are rising.
 > 48% of UK land is used by farming and agriculture is the 2nd largest emitter of GHG's (after energy) contributing 12% of the emissions which must be reduced by 80% by 2050.
 > Take charge of your farm to reduce the rate of temperature increase and prevent the increase reaching 1.5°C by 2050.
