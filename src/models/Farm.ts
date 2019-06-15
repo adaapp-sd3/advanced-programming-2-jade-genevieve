@@ -6,50 +6,92 @@ class Farm extends Drawable {
   width: number = 700
   height: number = 710
   cows: any
-  sheep: any
+  beef: any
+  pigs: any
+  pork: any
   chickens: any
-  straw: any
-  milk: any
-  seeds: any
+  eggs: any;
+  trees: any
+  sunflowers: any
+  beans: any
+  feed: any
+  water: any
+  solarPanel: any
   constructor(
     cows: any = {
       name: "Cows",
-      total: 142,
+      total: 42,
       objects: []
     },
-    sheep: any = {
-      name: "Sheep",
+    beef: any = {
+      name: "Beef",
+      total: 0,
+      objects: []
+    },
+    pigs: any = {
+      name: "Pigs",
       total: 42,
+      objects: []
+    },
+    pork: any = {
+      name: "Cows",
+      total: 0,
       objects: []
     },
     chickens: any = {
       name: "Chickens",
-      total: 42,
+      total: 142,
       objects: []
     },
-    straw: any = {
-      name: "Straw",
+    eggs: any = {
+      name: "Chickens",
+      total: 10,
+      objects: []
+    },
+    trees: any = {
+      name: "Trees",
+      total: 3,
+      objects: []
+    },
+    sunflowers: any = {
+      name: "Sunflowers",
+      total: 1,
+      objects: []
+    },
+    beans: any = {
+      name: "Beans",
+      total: 2,
+      objects: []
+    },
+    feed: any = {
+      name: "Feed",
       total: 1000,
-      unit: "bails"
+      unit: "KG"
     },
-    milk: any = {
-      name: "Milk",
-      total: 0,
-      unit: "pints"
+    water: any = {
+      name: "Water",
+      total: 900,
+      unit: "ML"
     },
-    seeds: any = {
-      name: "Grass seeds",
+    solarPanel: any = {
+      name: "Solar",
       total: 0,
-      unit: "bunches"
+      unit: "ML"
     }
   ) {
     super()
     this.cows = cows
-    this.sheep = sheep
+    this.beef = beef
+    this.pigs = pigs
+    this.pork = pork
     this.chickens = chickens
-    this.straw = straw
-    this.milk = milk
-    this.seeds = seeds
+    this.eggs = eggs
+    this.trees = trees
+    this.sunflowers = sunflowers
+    this.beans = beans
+    this.feed = feed
+    this.water = water
+    this.solarPanel = solarPanel
   }
 
   public preload() {

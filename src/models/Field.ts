@@ -9,19 +9,19 @@ class Field extends Drawable {
     yPos: number,
     w: number,
     h: number,
-    initalContents: any[] = []
+    initialContents: any[] = []
   ) {
     super()
     this.width = w
     this.height = h
     this.x = xPos
     this.y = yPos
-    this.contents = initalContents
+    this.contents = initialContents
   }
 
   public draw() {
     this.p5.stroke("#7c4011")
-    this.p5.strokeWeight(10)
+    this.p5.strokeWeight(3)
     this.p5.fill("#b58969")
     this.p5.rect(this.x, this.y, this.width, this.height, 10)
 
